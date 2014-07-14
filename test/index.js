@@ -1,8 +1,21 @@
 var should = require('chai').should(),
-    ac = require('../index')();
+    ac = require('../');
 
 describe('autocomplete', function() {
   it('returns autoc...', function() {
-    ac.should.equal('autoc...');
+    ac.auto().should.equal('autoc...');
+  });
+});
+
+describe('Word List DB Import', function() {
+  it('should import a list english words', function(done) {
+
+    ac.import(function(err, words){
+      ac.count(function(err,count){
+        count.should.equal(354983); // 354983
+        console.log(' - - - -',count);
+        done();
+      });
+    });
   });
 });

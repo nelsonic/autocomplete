@@ -4,7 +4,7 @@
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Everything is Awesome!\" && exit 0"
+    "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000"
   },
   "repository": {
     "type": "git",
