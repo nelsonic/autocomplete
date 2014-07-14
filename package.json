@@ -1,0 +1,26 @@
+{
+  "name": "ac",
+  "version": "0.0.1",
+  "description": "Autocomplete",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Everything is Awesome!\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nelsonic/ac.git"
+  },
+  "keywords": [
+    "Autocomplete"
+  ],
+  "author": "nelsonic <nodecoder@gmail.com> (https://github.com/nelsonic)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nelsonic/ac/issues"
+  },
+  "homepage": "https://github.com/nelsonic/ac",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1"
+  }
+}
