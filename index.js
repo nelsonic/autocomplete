@@ -21,7 +21,7 @@ ac.import = function(callback) {
       }
     });
     batch.write();
-    var words = 'success';
+    var words = 'imported';
     if (callback) {
       callback(null, words);
     }

@@ -13,3 +13,9 @@ on a shoe-string.
 
 - [x] Load all the words into LevelDB
 - [ ] Search for a complete word in Level
+
+
+
+## Why LevelDB ?
+
+- Benchmarks: http://leveldb.googlecode.com/svn/trunk/doc/benchmark.html
