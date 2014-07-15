@@ -15,6 +15,8 @@ on a shoe-string.
 - [x] Load all the words into LevelDB
 - [x] Search for a complete word in Level
 - [x] Search for a partial word
+- [ ] When a person clicks on a word in the UI we need to count
+that as a "vote" for the word, so we can get some stats.
 
 Example: search for the first four characters of the word awesome:
 
@@ -25,6 +27,8 @@ awesomely
 awesomeness
 awest
 ```
+These are the suggestions we would return to the client.
+More about that tomorrow ... ;-)
 
 
 
