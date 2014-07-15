@@ -12,8 +12,8 @@ describe('Word List DB Import', function() {
 
     ac.import(function(err, words){
       ac.count(function(err,count){
-        count.should.equal(354983); // 354983
-        console.log(' - - - -',count);
+        count.should.equal(235886); // 354983
+        console.log('  ---> WordCount:',count);
         done();
       });
     });

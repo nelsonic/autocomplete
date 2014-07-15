@@ -1,7 +1,7 @@
 var ac = {};
 var fs = require('fs');
 var level = require('level');
-var db = level(__dirname + '/autocomplete');
+var db = level(__dirname + '/db');
 
 ac.auto = function() {
     return 'autoc...';
@@ -10,7 +10,7 @@ ac.auto = function() {
 // Import the list of words from words.txt into LevelDB
 ac.import = function(callback) {
   // read file and split into an array of lines
-  var lines = fs.readFileSync(__dirname + '/words.txt', 'utf8')
+  var lines = fs.readFileSync(__dirname + '/words2.txt', 'utf8')
     .split('\n');
 
     // uses batch chained: https://github.com/rvagg/node-levelup#batch_chained
@@ -32,7 +32,7 @@ ac.count = function (callback) {
       count++;
     })
     .on('end', function(){
-      console.log(' - - - -',count);
+      // console.log(' - - - -',count);
       callback(null, count);
     }); // no error handling is *deliberate*
 };
