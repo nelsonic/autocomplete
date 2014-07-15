@@ -1,6 +1,6 @@
 AutoComplete
 ============
-[![Build Status](https://travis-ci.org/nelsonic/ac.png?branch=master)](https://travis-ci.org/nelsonic/ac) [![Coverage Status](https://coveralls.io/repos/nelsonic/ac/badge.png)](https://coveralls.io/r/nelsonic/ac) [![Code Climate](https://codeclimate.com/github/nelsonic/ac.png)](https://codeclimate.com/github/nelsonic/ac) [![Dependencies](https://david-dm.org/nelsonic/ac.png?theme=shields.io)](https://david-dm.org/nelsonic/ac) [![NPM version](https://badge.fury.io/js/ac.png)](https://npmjs.org/package/ac)
+[![Build Status](https://travis-ci.org/nelsonic/ac.png?branch=master)](https://travis-ci.org/nelsonic/ac) [![Coverage Status](https://coveralls.io/repos/nelsonic/ac/badge.png)](https://coveralls.io/r/nelsonic/ac) [![Code Climate](https://codeclimate.com/github/nelsonic/ac.png)](https://codeclimate.com/github/nelsonic/ac) [![Dependencies](https://david-dm.org/nelsonic/ac.png?theme=shields.io)](https://david-dm.org/nelsonic/ac) [![devDependency Status](https://david-dm.org/nelsonic/ac/dev-status.svg)](https://david-dm.org/nelsonic/ac#info=devDependencies) [![NPM version](https://badge.fury.io/js/ac.png)](https://npmjs.org/package/ac)
 
 Autocomplete all the words!
 
@@ -22,7 +22,7 @@ on a shoe-string.
 - Benchmarks: http://leveldb.googlecode.com/svn/trunk/doc/benchmark.html
 
 
-## Test Coverage
+#### Got Coverage ?
 ```
 npm run-script cover
 ```

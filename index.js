@@ -16,9 +16,9 @@ ac.import = function(callback) {
     // uses batch chained: https://github.com/rvagg/node-levelup#batch_chained
     var batch = db.batch();
     lines.forEach(function (word) {
-      if(word.length > 0){
+      // if(word.length > 0){
         batch.put(word, 0); // number of times word was searched for
-      }
+      // }
     });
     batch.write();
     var words = 'imported';
@@ -36,5 +36,23 @@ ac.count = function (callback) {
       callback(null, count);
     }); // no error handling is *deliberate*
 };
+
+ac.findWord = function(word, callback) {
+  var words = [];
+  var key = word.trim();
+  var i = 0;
+  db.createReadStream({ start: key, end: key + '\xff' })
+    .on('data', function (data) {
+      // console.log('- - - - ',i++);
+      // console.dir(data);
+      words.push(data);
+    })
+    .on('end', function () {
+      // if (callback)
+      // console.log('- - - - ->> words count',words.length);
+      callback(null, words);
+    });
+};
+
 
 module.exports = ac;
