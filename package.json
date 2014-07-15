@@ -4,7 +4,8 @@
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover _mocha -- -R spec --timeout 15000"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --timeout 15000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "cover": "./node_modules/.bin/istanbul cover _mocha -- -R spec --timeout 15000"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/nelsonic/ac",
   "devDependencies": {
     "chai": "^1.9.1",
+    "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "mocha": "^1.20.1"
   },
