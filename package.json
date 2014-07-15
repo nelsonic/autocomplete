@@ -4,8 +4,9 @@
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --timeout 15000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "cover": "./node_modules/.bin/istanbul cover _mocha -- -R spec --timeout 15000"
+    "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000",
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --timeout 15000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "quick": "./node_modules/.bin/istanbul cover _mocha -- -R spec --timeout 15000"
   },
   "repository": {
     "type": "git",
