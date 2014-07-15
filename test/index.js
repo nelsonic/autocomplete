@@ -24,7 +24,7 @@ describe('Word List', function() {
   });
 
   it('contains 4 words begining in "awes" ', function(done) {
-    ac.findWord('awes', function(err,words){
+    ac.findWords('awes', function(err,words){
       var justWords = words.map( function(word) {
         return word.key;
       });

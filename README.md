@@ -13,8 +13,20 @@ on a shoe-string.
 ## Tasks
 
 - [x] Load all the words into LevelDB
-- [ ] Search for a complete word in Level
-- [ ] investigate code coverage on https://codeclimate.com/repos/53c45db86956800b7b00064d/coverage_setup
+- [x] Search for a complete word in Level
+- [x] Search for a partial word
+
+Example: search for the first four characters of the word awesome:
+
+Returns the following four words:
+```
+awesome
+awesomely
+awesomeness
+awest
+```
+
+
 
 
 ## Why LevelDB ?
@@ -26,3 +38,4 @@ on a shoe-string.
 ```
 npm run-script cover
 ```
+- [ ] investigate code coverage on https://codeclimate.com/repos/53c45db86956800b7b00064d/coverage_setup

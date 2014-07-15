@@ -37,19 +37,15 @@ ac.count = function (callback) {
     }); // no error handling is *deliberate*
 };
 
-ac.findWord = function(word, callback) {
+ac.findWords = function(word, callback) {
   var words = [];
   var key = word.trim();
   var i = 0;
   db.createReadStream({ start: key, end: key + '\xff' })
     .on('data', function (data) {
-      // console.log('- - - - ',i++);
-      // console.dir(data);
       words.push(data);
     })
     .on('end', function () {
-      // if (callback)
-      // console.log('- - - - ->> words count',words.length);
       callback(null, words);
     });
 };
