@@ -17,6 +17,9 @@ on a shoe-string.
 - [x] Search for a partial word
 - [ ] When a person clicks on a word in the UI we need to count
 that as a "vote" for the word, so we can get some stats.
+- [ ] Use Socket.io for faster transport of characters and suggestions.
+- [ ] Implement multiple UIs
+- [ ] Only start searching for suggestions after the person types second char
 
 Example: search for the first four characters of the word awesome:
 
