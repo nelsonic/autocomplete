@@ -13,7 +13,7 @@ on a shoe-string.
 
 - [x] Load all the words into LevelDB
 - [ ] Search for a complete word in Level
-
+- [ ] investigate code coverage on https://codeclimate.com/repos/53c45db86956800b7b00064d/coverage_setup
 
 
 ## Why LevelDB ?

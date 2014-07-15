@@ -4,7 +4,7 @@
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000"
+    "test": "./node_modules/.bin/istanbul cover _mocha -- -R spec --timeout 15000"
   },
   "repository": {
     "type": "git",

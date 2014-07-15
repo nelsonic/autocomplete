@@ -22,9 +22,7 @@ ac.import = function(callback) {
     });
     batch.write();
     var words = 'imported';
-    if (callback) {
-      callback(null, words);
-    }
+    callback(null, words);
 };
 
 ac.count = function (callback) {
@@ -35,15 +33,8 @@ ac.count = function (callback) {
     })
     .on('end', function(){
       console.log(' - - - -',count);
-      if(typeof callback === 'function'){
-        callback(null, count);
-      }
-    })
-    .on('error', function (err) {
-      if (callback) {
-        callback(err);
-      }
-    });
+      callback(null, count);
+    }); // no error handling is *deliberate*
 };
 
 module.exports = ac;
