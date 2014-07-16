@@ -42,6 +42,7 @@ describe('Word List', function() {
       count = parseInt(count,10);
       console.log('- - - > ',count);
       count.should.equal(1);
+      // check it wasn't a fluke. 
       ac.incrementViewCount('this', function(err,count2){
         count2 = parseInt(count2,10);
         console.log('- - - > ',count2);

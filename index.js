@@ -15,7 +15,7 @@ db.get('name', function (err, value) {
 // Import the list of words from words.txt into LevelDB
 ac.import = function(callback) {
   // read file and split into an array of lines
-  var lines = fs.readFileSync(__dirname + '/words2.txt', 'utf8')
+  var lines = fs.readFileSync(__dirname + '/words.txt', 'utf8')
     .split('\n');
     var wc = 0;
     // uses batch chained: https://github.com/rvagg/node-levelup#batch_chained

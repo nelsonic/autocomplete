@@ -4,7 +4,7 @@ AutoComplete
 [![Coverage Status](https://coveralls.io/repos/nelsonic/ac/badge.png)](https://coveralls.io/r/nelsonic/ac)
 [![Code Climate](https://codeclimate.com/github/nelsonic/ac.png)](https://codeclimate.com/github/nelsonic/ac)
 [![Dependencies](https://david-dm.org/nelsonic/ac.png?theme=shields.io)](https://david-dm.org/nelsonic/ac)
-[![devDependency Status](https://david-dm.org/nelsonic/ac/dev-status.svg)](https://david-dm.org/nelsonic/ac#info=devDependencies) 
+[![devDependency Status](https://david-dm.org/nelsonic/ac/dev-status.svg)](https://david-dm.org/nelsonic/ac#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/ac.png)](https://npmjs.org/package/ac)
 
 Autocomplete all the words!
@@ -38,8 +38,11 @@ awest
 These are the suggestions we would return to the client.
 More about that tomorrow ... ;-)
 
+## Maybe (remind me to do these later)
 
-
+- [ ] Use the zipped version of the words.txt file to reduce
+bandwidth when installing the the module.
+- [ ] Remove surplus words files (again to reduce bandwidth)
 
 ## Why LevelDB ?
 
