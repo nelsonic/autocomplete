@@ -49,10 +49,27 @@ ac.findWords = function(word, callback) {
     })
     .on('end', function () {
       callback(null, words);
-    })
-    .on('error', function (){
-      callback(null, words);
     });
+};
+
+ac.incrementViewCount = function(word, callback) {
+  db.get(word, function(err, value){
+    value = parseInt(value,10) + 1;
+    // console.log(word, value);
+    db.put(word, value, function (err) {
+    /* istanbul ignore if */
+      if (err) {
+        return console.log('Ooops!', err); // some kind of I/O error
+      }
+    // callback(null, value);
+
+      db.get(word, function(err, count){
+        // console.log("Updated:",count);
+        // db.put(word, value);
+        callback(null, count);
+      });
+    });
+  });
 };
 
 

@@ -37,4 +37,18 @@ describe('Word List', function() {
   });
 
 
+  it('increment the view count for a word ', function(done) {
+    ac.incrementViewCount('this', function(err,count){
+      count = parseInt(count,10);
+      console.log('- - - > ',count);
+      count.should.equal(1);
+      ac.incrementViewCount('this', function(err,count2){
+        count2 = parseInt(count2,10);
+        console.log('- - - > ',count2);
+        count2.should.equal(2);
+        done();
+      });
+    });
+  });
+
 });
