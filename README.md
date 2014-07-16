@@ -42,7 +42,8 @@ More about that tomorrow ... ;-)
 
 - [ ] Use the zipped version of the words.txt file to reduce
 bandwidth when installing the the module.
-- [ ] Remove surplus words files (again to reduce bandwidth)
+- [x] Remove surplus words files (again to reduce bandwidth)
+- [ ] delete un-compressed version of words.txt
 
 ## Why LevelDB ?
 
