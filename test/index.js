@@ -1,24 +1,18 @@
 var should = require('chai').should(),
     ac = require('../');
 
-describe('autocomplete', function() {
-  it('returns autoc...', function() {
-    ac.auto().should.equal('autoc...');
-  });
-});
-
 describe('Word List', function() {
 
   before(function dbSetup() {
-    ac.import(function(err, words){
-      console.log('words imported.');
+    ac.import(function(wordCount){
+      console.log('    ✓ words imported:', wordCount);
     });
   });
 
   it('should contain a list english words', function(done) {
     ac.count(function(err,count){
       count.should.equal(235886); // 354983
-      console.log('  ---> WordCount:',count);
+      console.log('    --> WordCount:',count);
       done();
     });
   });
@@ -28,9 +22,16 @@ describe('Word List', function() {
       var justWords = words.map( function(word) {
         return word.key;
       });
-      console.log(justWords);
       var awesWords = [ 'awesome', 'awesomely', 'awesomeness', 'awest' ];
       justWords.length.should.equal(4);
+      console.log(justWords);
+      done();
+    });
+  });
+
+  it('contains 0 words beginning in "zeit" ', function(done) {
+    ac.findWords('zeit', function(err,words){
+      words.length.should.equal(0);
       done();
     });
   });
