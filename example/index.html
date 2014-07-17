@@ -2,12 +2,70 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>AutoComplete Like Boss!</title>
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
     </head>
     <body>
-      <h1> Start typing a word: </h1>
+      <h1> Lookup a word: </h1>
       <input type="text" id="word" />
       <span id="suggest"></span>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>        <script src="/client.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+        <!-- <script src="/client.js"></script> -->
+        <style>
+          body {
+            margin: 3em 0em 0em 20%;
+          }
+          h1 {
+            font-size: 3em;
+            margin-bottom: 2em;
+          }
+          #word {
+            font-size: 3em;
+            height: 2em;
+            width: 60%;
+            padding: 0.2em;
+          }
+          #suggest p {
+            font-size: 1.5em;
+            width: 60%
+            padding: 0.2em;
+          }
+        </style>
+
+<script>
+
+$(function() {
+  var words = [];
+  console.log('Type Something!');
+  $('#word').keyup(function(e){
+    console.log(e);
+    var word = $('#word').val().trim();
+    console.log(word);
+    if(word.length < 2){
+      $( "#suggest" ).html('');
+    } else {
+      $.get( "/"+word, function( data ) {
+
+        if( data && data.length > 0) {
+
+          console.log(typeof data ); //+' - '+data);
+          words = data.split(',');
+          var html = words.map(function(word){
+            return "<p>"+word+"</p>";
+          });
+
+          $( "#suggest" ).html( html.join('') );
+        }
+      });
+    }
+  });
+});
+
+function noresults() {
+
+}
+
+</script>
+
     </body>
 </html>

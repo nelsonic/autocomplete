@@ -24,7 +24,8 @@ on a shoe-string.
 that as a "vote" for the word, so we can get some stats.
 - [ ] Use Socket.io for faster transport of characters and suggestions.
 - [ ] Implement multiple UIs
-- [ ] Only start searching for suggestions after the person types second char
+- [x] Only start searching for suggestions after the person types second char
+- [ ] Put demo app on Heroku
 
 Example: search for the first four characters of the word awesome:
 

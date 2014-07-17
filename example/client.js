@@ -1,6 +1,7 @@
 $(function() {
   console.log('Type Something!');
-  $('#word').keyup(function(){
+  $('#word').keyup(function(e){
+    console.log(e);
     var word = $('#word').val().trim();
     console.log(word);
     if(word.length < 2){
@@ -8,13 +9,14 @@ $(function() {
     } else {
       $.get( "/"+word, function( data ) {
 
-        if(data.length > 0) {
+        if( data && data.length > 0) {
 
           console.log(typeof data ); //+' - '+data);
           var words = data.split(',');
           var html = words.map(function(word){
             return "<p>"+word+"</p>";
           });
+
           $( "#suggest" ).html( html.join('') );
         }
       });
