@@ -11,45 +11,45 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
         <!-- <script src="/client.js"></script> -->
-        <style>
-          body {
-            margin: 1em 0em 0em 20%;
-          }
-          h1 {
-            font-size: 3em;
-            margin-bottom: .5em;
-          }
-          #word {
-            font-size: 3em;
-            height: 2em;
-            padding: 0.2em;
-          }
-          p {
-            margin-bottom: 0px
-          }
-          #word, #suggest {
-            width: 60%;
-            min-width: 300px;
-          }
+<style>
+body {
+  margin: 1em 0em 0em 20%;
+}
+h1 {
+  font-size: 3em;
+  margin-bottom: .5em;
+}
+#word {
+  font-size: 3em;
+  height: 2em;
+  padding: 0.2em;
+}
+p {
+  margin-bottom: 0px
+}
+#word, #suggest {
+  width: 60%;
+  min-width: 300px;
+}
 
-          #suggest p {
-            display: block;
-            font-size: 1.5em;
-            padding: 0.3em;
-            border-bottom: 1px solid #bdc3c7;
-            border-left: 1px solid #bdc3c7;
-            border-right: 1px solid #bdc3c7;
-            color: #2c3e50;
-          }
-          .even {
-            background-color: #ecf0f1;
-            color: #27ae60;
-          }
-          #suggest p#active {
-            background-color: #27ae60;
-            color: white;
-          }
-        </style>
+#suggest p {
+  display: block;
+  font-size: 1.5em;
+  padding: 0.3em;
+  border-bottom: 1px solid #bdc3c7;
+  border-left: 1px solid #bdc3c7;
+  border-right: 1px solid #bdc3c7;
+  color: #2c3e50;
+}
+.even {
+  background-color: #ecf0f1;
+  color: #27ae60;
+}
+#suggest p#active {
+  background-color: #27ae60;
+  color: white;
+}
+</style>
 
 <script>
 
@@ -63,14 +63,14 @@ $(function() {
     var k = e.keyCode;
     // scrolling through word suggestions
     //  enter, space or down (key codes 13, 32 and 40 respectively)
-    if(k === 40 || k === 32 || k === 13) {
+    if(k === 40 || k === 32) {
       console.log("down");
       index++;
     } else if(k === 38) { // left or up (key codes 37 or 38)
       console.log("up");
       index--;
-    } else if(k === 13){
-      
+    } else if(k === 13){ // select the word for more info
+      $('#word').val(words[index]);
     }
 
 // thinking about using left/right arrow keys to scroll through the suggestions
@@ -94,7 +94,7 @@ $(function() {
           var html = words.map(function(word){
             row = oddEven(count);
             active = activeWord(count, index);
-            // $('#word').val(words[index]);
+            //
             count++;
             return "<p class='"+row +"' id='"+active  +"' >"+word+"</p>";
           });
