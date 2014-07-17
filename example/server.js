@@ -7,14 +7,17 @@ var client = fs.readFileSync(__dirname+'/client.js');
 
 http.createServer(function (req, res) {
   console.log("URL:",req.url);
+  var word;
   if(req.url === '/'){
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(index);
-  } else if(req.url === '/client.js'){
-    res.writeHead(200, {'Content-Type': 'application/javascript'});
-    res.end(client);
+  } else if(req.url.indexOf('/vote/') > -1){
+    word = req.url.replace('/','').trim();
+    console.log("VOTE!", word);
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('great success');
   } else {
-    var word = req.url.replace('/','').trim();
+    word = req.url.replace('/','').trim();
     console.log('word:',word);
     ac.findWords(word, function(err, words){
       var justWords = words.map( function(word) {
