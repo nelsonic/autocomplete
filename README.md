@@ -15,19 +15,24 @@ with a large number of possible words.
 This is an experiment to create a great auto-complete experience
 on a shoe-string.
 
+## Demo: http://wordsy.herokuapp.com/
+
+
+
 ## Tasks
 
-- [x] Load all the words into LevelDB
-- [x] Search for a complete word in Level
-- [x] Search for a partial word
+- [x] Load all the words into LevelDB (no need to setup a Database!)
+- [x] Search for a complete word in LevelDB
+- [x] Search for a partial word (to get suggestions)
+- [x] Implement simple example UI
+- [x] Only start searching for suggestions after the person types second char
 - [ ] When a person clicks on a word in the UI we need to count
 that as a "vote" for the word, so we can get some stats.
-- [ ] Use Socket.io for faster transport of characters and suggestions.
-- [ ] Implement multiple UIs
-- [x] Only start searching for suggestions after the person types second char
-- [ ] Put demo app on Heroku
+- [x] Put demo app on Heroku: http://wordsy.herokuapp.com/
+- [x] Remove surplus words files (to reduce bandwidth)
+note: extended list is: https://github.com/nelsonic/english-words
 
-Example: search for the first four characters of the word awesome:
+Example: search for the **first four characters** of the word awesome:
 
 Returns the following four words:
 ```
@@ -36,18 +41,13 @@ awesomely
 awesomeness
 awest
 ```
-These are the suggestions we would return to the client.
-More about that tomorrow ... ;-)
 
-## Maybe (remind me to do these later)
 
-- [ ] Use the zipped version of the words.txt file to reduce
-bandwidth when installing the the module.
-- [x] Remove surplus words files (again to reduce bandwidth)
-- [ ] delete un-compressed version of words.txt
+
 
 ## Why LevelDB ?
 
+- *Zero installation* or configuration required. **#winning**
 - Benchmarks: http://leveldb.googlecode.com/svn/trunk/doc/benchmark.html
 
 
@@ -55,4 +55,11 @@ bandwidth when installing the the module.
 ```
 npm run-script cover
 ```
-- [ ] investigate code coverage on https://codeclimate.com/repos/53c45db86956800b7b00064d/coverage_setup
+
+## Ideas (remind me to do these later)
+
+- [ ] Use the zipped version of the words.txt file to reduce
+bandwidth when installing the the module.
+
+- [ ] delete un-compressed version of words.txt
+- [ ] Use Socket.io for faster transport of characters and suggestions.
