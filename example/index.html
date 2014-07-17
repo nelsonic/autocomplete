@@ -5,44 +5,84 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
     </head>
     <body>
-      <h1> Lookup a word: </h1>
-      <input type="text" id="word" />
+      <!-- <h1> Lookup a word: </h1> -->
+      <input type="text" id="word" placeholder="Type a word..."/>
       <span id="suggest"></span>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
         <!-- <script src="/client.js"></script> -->
         <style>
           body {
-            margin: 3em 0em 0em 20%;
+            margin: 1em 0em 0em 20%;
           }
           h1 {
             font-size: 3em;
-            margin-bottom: 2em;
+            margin-bottom: .5em;
           }
           #word {
             font-size: 3em;
             height: 2em;
-            width: 60%;
             padding: 0.2em;
           }
+          p {
+            margin-bottom: 0px
+          }
+          #word, #suggest {
+            width: 60%;
+            min-width: 300px;
+          }
+
           #suggest p {
+            display: block;
             font-size: 1.5em;
-            width: 60%
-            padding: 0.2em;
+            padding: 0.3em;
+            border-bottom: 1px solid #bdc3c7;
+            border-left: 1px solid #bdc3c7;
+            border-right: 1px solid #bdc3c7;
+            color: #2c3e50;
+          }
+          .even {
+            background-color: #ecf0f1;
+            color: #27ae60;
+          }
+          #suggest p#active {
+            background-color: #27ae60;
+            color: white;
           }
         </style>
 
 <script>
 
 $(function() {
-  var words = [];
+  var words = [], word, previousWord,
+  index = -1; // index tracks where in the words array we are
   console.log('Type Something!');
+  // each time a key is pressed on the keyboard run this:
   $('#word').keyup(function(e){
     console.log(e);
-    var word = $('#word').val().trim();
+    var k = e.keyCode;
+    // scrolling through word suggestions
+    //  enter, space or down (key codes 13, 32 and 40 respectively)
+    if(k === 40 || k === 32 || k === 13) {
+      console.log("down");
+      index++;
+    } else if(k === 38) { // left or up (key codes 37 or 38)
+      console.log("up");
+      index--;
+    } else if(k === 13){
+      
+    }
+
+// thinking about using left/right arrow keys to scroll through the suggestions
+// will mean that users won't be able to change characters in their word...
+
+
+    word = $('#word').val().trim();
     console.log(word);
+
     if(word.length < 2){
       $( "#suggest" ).html('');
+      index = -1;
     } else {
       $.get( "/"+word, function( data ) {
 
@@ -50,16 +90,39 @@ $(function() {
 
           console.log(typeof data ); //+' - '+data);
           words = data.split(',');
+          var count = 0, row;
           var html = words.map(function(word){
-            return "<p>"+word+"</p>";
+            row = oddEven(count);
+            active = activeWord(count, index);
+            // $('#word').val(words[index]);
+            count++;
+            return "<p class='"+row +"' id='"+active  +"' >"+word+"</p>";
           });
 
           $( "#suggest" ).html( html.join('') );
+        } else { // no words
+          $( "#suggest" ).html('');
         }
       });
     }
   });
 });
+
+function activeWord(count, index){
+  if(count === index){
+    return 'active';
+  } else {
+    return '';
+  }
+}
+
+function oddEven(count){
+  if(count%2===0){
+    return 'even';
+  } else {
+    return 'odd';
+  }
+}
 
 function noresults() {
 
