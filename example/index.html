@@ -64,6 +64,7 @@ $(function() {
     var k = e.keyCode;
     // scrolling through word suggestions
     console.log(k);
+
     if(k === 8) { // backspace (delete a character)
       index = -1; // reset word index
     }
@@ -72,17 +73,20 @@ $(function() {
       // enter, space or down (key codes 13, 32 and 40 respectively)
       console.log("down");
       index++;
+    }
 
-    } else if(k === 38) {
+    if(k === 38) {
       // left or up (key codes 37 or 38)
       console.log("up");
       index--;
+    }
 
-    } else if(k === 13){
+    if(k === 13){
       // select the word from suggestions list
       $('#word').val(words[index]);
       // console.log('VOTE!');
     }
+
     word = $('#word').val().trim();
     console.log(word);
 

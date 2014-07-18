@@ -9,6 +9,8 @@ AutoComplete
 
 Autocomplete all the words!
 
+## Background
+
 The project we are currently working on requires auto-complete
 with a large number of possible words.
 
@@ -63,3 +65,21 @@ bandwidth when installing the the module.
 
 - [ ] delete un-compressed version of words.txt
 - [ ] Use Socket.io for faster transport of characters and suggestions.
+
+## Research
+
+There are several solutions to the autocomplete/autosuggest problem.
+The two most popular are:
+
+- JQuery AutoComplete: http://jqueryui.com/autocomplete/
+- Typeahead.js (by Twitter): https://twitter.github.io/typeahead.js/
+
+JQuery AutoComplete is Clunky and requires JQuery UI (#**bloatware**)
+try the demo on a mobile device:
+  http://jqueryui.com/autocomplete/#remote to see what I mean.
+
+Typeahead is quite slick.
+See: https://twitter.github.io/typeahead.js/examples
+but is *focussed* on the *front-end*. I needed the back-end component.
+(i.e. a *fast* way of returning word suggestions from a large
+  dictionary of words - not just a small list of US States or Cities)
