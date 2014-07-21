@@ -45,14 +45,6 @@ awest
 ```
 
 
-
-
-## Why LevelDB ?
-
-- *Zero installation* or configuration required. **#winning**
-- Benchmarks: http://leveldb.googlecode.com/svn/trunk/doc/benchmark.html
-
-
 #### Got Coverage ?
 ```
 npm run-script cover
@@ -66,7 +58,10 @@ bandwidth when installing the the module.
 - [ ] delete un-compressed version of words.txt
 - [ ] Use Socket.io for faster transport of characters and suggestions.
 
+
 ## Research
+
+### Existing Autocompletion Libraries
 
 There are several solutions to the autocomplete/autosuggest problem.
 The two most popular are:
@@ -83,3 +78,17 @@ See: https://twitter.github.io/typeahead.js/examples
 but is *focussed* on the *front-end*. I needed the back-end component.
 (i.e. a *fast* way of returning word suggestions from a large
   dictionary of words - not just a small list of US States or Cities)
+
+### ~~Which Database~~ Why LevelDB?
+
+- *Zero installation* or configuration required. **#winning**
+- Benchmarks: http://leveldb.googlecode.com/svn/trunk/doc/benchmark.html
+- LevelDB with Node: http://dailyjs.com/2013/05/03/leveldb-and-node-2/
+- Try/learn it: http://nodeschool.io/#levelmeup
+- Great documentaion at: https://github.com/rvagg/node-levelup
+- Another intro: https://medium.com/node-js-javascript/the-ultimate-database-of-the-future-45e0d00f153c
+
+
+### Media Wiki API
+
+- [ ] http://www.mediawiki.org/wiki/API:Main_page
