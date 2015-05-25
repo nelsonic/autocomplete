@@ -20,9 +20,6 @@ http.createServer(function (req, res) {
     word = req.url.replace('/', '').trim();
     console.log('word:', word);
     ac.findWords(word, function (err, w) {
-      console.log(w);
-      // var json = { "words" : words };
-      // res.writeHead(200, {'Content-Type': 'text/json'});
       res.end(w.join(','));
     });
   }
