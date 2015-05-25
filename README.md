@@ -30,10 +30,14 @@ on a shoe-string.
 - [x] Provide a way to search for a word (*or part of word*) in the words list (to get suggestions)
 - [x] store a count of the words that have been searched for
 
-- [x] Implement simple example UI
-- [x] Only start searching for suggestions after the person types second char
+### Client
+
+- [x] Implement simple example UI allowing people to search for words
+- [x] Only start searching for suggestions after the person types second character
+- [x] send the string of characters the person types to the server
 - [ ] When a person clicks on a word in the UI we need to count
 that as a "vote" for the word, so we can get some stats.
+- [ ] When a word is clicked (or enter key hit) display the definition
 - [x] Put demo app on Heroku: http://wordsy.herokuapp.com/
 - [x] Remove surplus words files (to reduce bandwidth)
 note: extended list is: https://github.com/nelsonic/english-words

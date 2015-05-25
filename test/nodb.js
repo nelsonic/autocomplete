@@ -6,11 +6,6 @@ ac.import(function (wordCount) {
   assert.equal(wordCount, 235886);
 });
 
-// ac.count(function (err, count) {
-//   assert.equal(235886, count);
-//   console.log('✓ word count: ', count);
-// });
-
 ac.findWords('awes', function (err, words) {
   // var awesWords = [ 'awesome', 'awesomely', 'awesomeness', 'awest' ];
   assert.equal(4, words.length);
