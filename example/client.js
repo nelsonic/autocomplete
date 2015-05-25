@@ -1,7 +1,5 @@
-$(function () {
-  console.log('Type Something!');
+$(function () { // auto complete in 20 lines of code?
   $('#word').keyup(function (e) {
-    console.log(e);
     var word = $('#word').val().trim();
     console.log(word);
     if (word.length < 2) {
@@ -9,7 +7,6 @@ $(function () {
     } else {
       $.get("/" + word, function (data) {
         if (data && data.length > 0) {
-          // console.log(typeof data);
           var words = data.split(',');
           var html = words.map(function (word) {
             return "<p>" + word + "</p>";

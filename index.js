@@ -34,9 +34,8 @@ ac.count = function (callback) {
       count++;
     })
     .on('end', function () {
-      // console.log(' - - - -',count);
       callback(null, count);
-    }); // no error handling is *deliberate*
+    });
 };
 
 ac.findWords = function (word, callback) {
@@ -58,13 +57,9 @@ ac.incrementViewCount = function (word, callback) {
     db.put(word, value, function (err) {
     /* istanbul ignore if */
       if (err) {
-        return console.log('Ooops!', err); // some kind of I/O error
+        return console.log('Ooops!', err);
       }
-    // callback(null, value);
-
       db.get(word, function (err, count) {
-        // console.log("Updated:",count);
-        // db.put(word, value);
         callback(null, count);
       });
     });

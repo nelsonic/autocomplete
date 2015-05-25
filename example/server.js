@@ -1,5 +1,4 @@
 var ac = require('../');
-
 var http = require('http');
 var fs = require('fs');
 var index = fs.readFileSync(__dirname + '/index.html');

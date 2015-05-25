@@ -29,7 +29,7 @@ ac.incrementViewCount('this', function (err, count) {
   count = parseInt(count, 10);
   // console.log('- - - > ',count);
   assert(count > 0);
-  // check it wasn't a fluke.
+  // check agin to confirm it wasn't a fluke.
   ac.incrementViewCount('this', function (err, count2) {
     count2 = parseInt(count2, 10);
     // console.log('- - - > ',count2);

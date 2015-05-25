@@ -1,6 +1,6 @@
 {
   "name": "ac",
-  "version": "0.0.2",
+  "version": "1.0.2",
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
