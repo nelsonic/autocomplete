@@ -27,12 +27,12 @@ ac.findWords('zeit', function (err, words) {
 
 ac.count('this', function (err, count) {
   count = parseInt(count, 10);
-  // console.log('- - - > ',count);
+  // console.log(' count - - - > ', count);
   assert(count > 0);
   // check agin to confirm it wasn't a fluke.
   ac.count('this', function (err, count2) {
     count2 = parseInt(count2, 10);
-    // console.log('- - - > ',count2);
+    // console.log(' count2 - - - > ', count2);
     assert(count < count2);
   });
 });

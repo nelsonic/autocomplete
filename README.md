@@ -23,9 +23,13 @@ on a shoe-string.
 
 ## Tasks
 
-- [x] Load all the words into LevelDB (no need to setup a Database!)
-- [x] Search for a complete word in LevelDB
-- [x] Search for a partial word (to get suggestions)
+### Server
+
+- [x] Read file with list of english words
+- [x] Store this list of words as an array called words
+- [x] Provide a way to search for a word (*or part of word*) in the words list (to get suggestions)
+- [x] store a count of the words that have been searched for
+
 - [x] Implement simple example UI
 - [x] Only start searching for suggestions after the person types second char
 - [ ] When a person clicks on a word in the UI we need to count
