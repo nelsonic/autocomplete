@@ -57,7 +57,7 @@ $(function() {
 
   var words = [], word, previousWord,
   index = -1; // index tracks where in the suggestions array we are
-  console.log('Type Something!');
+  console.log('Type Something in teh box!');
   // each time a key is pressed on the keyboard run this:
   $('#word').keyup(function(e){
 
@@ -84,7 +84,7 @@ $(function() {
     if(k === 13){
       // select the word from suggestions list
       $('#word').val(words[index]);
-      // console.log('VOTE!');
+      console.log('VOTE!', words[index]);
     }
 
     word = $('#word').val().trim();
@@ -95,7 +95,7 @@ $(function() {
       index = -1;
     } else {
       $.get( "/"+word, function( data ) {
-
+        console.log(data)
         if( data && data.length > 0) {
           renderSuggestions(data, index);
         } else { // no words

@@ -15,10 +15,9 @@ The project we are currently working on requires auto-complete
 with a large number of possible words.
 
 This is an experiment to create a great auto-complete experience
-on a shoe-string.
+on a *shoe-string*.
 
 ## Demo: http://wordsy.herokuapp.com/
-
 
 
 ## Tasks

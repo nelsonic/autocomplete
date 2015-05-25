@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover test/*.js",
+    "nocov": "node test/*.js",
     "coverage": "istanbul cover test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "codeclimate": "CODECLIMATE_REPO_TOKEN=4cf72310af534f72fcd2829fa59235f1e3311198cb6b6f48a6aca9a19711882d ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
     "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",

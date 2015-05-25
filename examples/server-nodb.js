@@ -1,4 +1,4 @@
-var ac = require('../lib/nodb');
+var ac = require('../lib/nodb.js');
 var http = require('http');
 var fs = require('fs');
 var index = fs.readFileSync(__dirname + '/index.html');
@@ -19,10 +19,11 @@ http.createServer(function (req, res) {
   else {
     word = req.url.replace('/', '').trim();
     console.log('word:', word);
-    ac.findWords(word, function (err, words) {
+    ac.findWords(word, function (err, w) {
+      console.log(w);
       // var json = { "words" : words };
       // res.writeHead(200, {'Content-Type': 'text/json'});
-      res.end(words.join(','));
+      res.end(w.join(','));
     });
   }
 }).listen(process.env.PORT || 3000);
