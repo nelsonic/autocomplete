@@ -22,6 +22,8 @@ on a *shoe-string*.
 
 ## Tasks
 
+- [ ] Scrap all this code and re-write from scratch TDD?
+
 ### Server
 
 - [x] Read file with list of english words
