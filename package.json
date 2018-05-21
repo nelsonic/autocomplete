@@ -1,6 +1,6 @@
 {
   "name": "ac",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/nelsonic/ac",
   "devDependencies": {
-    "codeclimate-test-reporter": "0.0.4",
-    "istanbul": "^0.3.14",
-    "level": "^1.0.0",
-    "pre-commit": "1.0.7"
+    "codeclimate-test-reporter": "0.5.0",
+    "istanbul": "^0.4.5",
+    "level": "^3.0.1",
+    "pre-commit": "1.2.2"
   },
   "dependencies": {
   },
@@ -42,6 +42,6 @@
     "codeclimate"
   ],
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 8"
   }
 }
