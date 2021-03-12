@@ -1,47 +1,39 @@
 {
   "name": "ac",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Autocomplete",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover test/*.js",
+    "test": "nyc test/*.js",
     "nocov": "node test/*.js",
-    "coverage": "istanbul cover test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "coverage": "nyc test/*.js && nyc check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "codeclimate": "CODECLIMATE_REPO_TOKEN=4cf72310af534f72fcd2829fa59235f1e3311198cb6b6f48a6aca9a19711882d ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
-    "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",
     "start": "node examples/server.js"
   },
   "pre-commit": [
     "jshint",
-    "cover"
+    "coverage"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/ac.git"
+    "url": "https://github.com/nelsonic/autocomplete.git"
   },
   "keywords": [
     "Autocomplete"
   ],
-  "author": "nelsonic <nodecoder@gmail.com> (https://github.com/nelsonic)",
+  "author": "nelsonic (https://github.com/nelsonic)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nelsonic/ac/issues"
+    "url": "https://github.com/nelsonic/autocomplete/issues"
   },
-  "homepage": "https://github.com/nelsonic/ac",
+  "homepage": "https://github.com/nelsonic/autocomplete",
   "devDependencies": {
-    "codeclimate-test-reporter": "0.5.0",
-    "istanbul": "^0.4.5",
-    "level": "^3.0.1",
+    "level": "6.0.1",
+    "nyc": "15.1.0",
     "pre-commit": "1.2.2"
   },
-  "dependencies": {
-  },
-  "pre-commit": [
-    "jshint",
-    "coverage",
-    "codeclimate"
-  ],
+  "dependencies": {},
   "engines": {
-    "node": ">= 8"
+    "node": ">= 14"
   }
 }

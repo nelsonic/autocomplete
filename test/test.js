@@ -22,7 +22,7 @@ ac.findWords('awes', function (err, words) {
 
 ac.findWords('zeit', function (err, words) {
   assert.equal(words, 0, 'there are no words begining in zeit');
-  console.log('✓ word list contains ' + words.length + ' words begining in "zeit" ');
+  console.log('✓ word list contains ' + words.length + ' words containing "zeit" ');
 });
 
 ac.incrementViewCount('this', function (err, count) {
